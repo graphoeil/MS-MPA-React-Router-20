@@ -1,6 +1,6 @@
 // Imports
 import React from "react";
-import { Route } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 // Component
 const Welcome = () => {
@@ -9,11 +9,11 @@ const Welcome = () => {
 	return(
 		<section>
 			<h1>The Welcome Page</h1>
-			{/* Nested route */}
-			<Route path="/welcome/new-user">
-				<p>Welcome new user !</p>
-			</Route>
-			{/* Nested route */}
+			{/* Outlet, displaying nested routes */}
+			<Outlet/>
+			{/* Otulet */}
+			{/* Links also need to be relative */}
+			<Link to="new-user">Show user</Link>
 		</section>
 	);
 

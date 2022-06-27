@@ -11,9 +11,18 @@ const MainHeader = () => {
 		<Wrapper>
 			<nav>
 				<ul>
-					{/* NavLink add .active class to the link matching current page */}
-					<li><NavLink activeClassName="active" to="/welcome">Welcome</NavLink></li>
-					<li><NavLink activeClassName="active" to="/products">Products</NavLink></li>
+					{/* activeClassName is removed from v6, we must add active class manually, 
+					isActive is now a property of the navData object. */}
+					<li>
+						<NavLink className={ (navData) => {
+							return navData.isActive ? 'active' : ''
+						} } to="/welcome">Welcome</NavLink>
+					</li>
+					<li>
+						<NavLink className={ (navData) => {
+							return navData.isActive ? 'active' : ''
+						} } to="/products">Products</NavLink>
+					</li>
 				</ul>
 			</nav>
 		</Wrapper>
